@@ -11,6 +11,10 @@
   ],
   "author": "SingleZhou",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zsg857981535/single-cli.git"
+  },
   "bin": {
     "single-cli": "./index.js"
   },
