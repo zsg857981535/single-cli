@@ -7,7 +7,7 @@
   填写仓库名称
   填写仓库描述
   创建本地文件夹, 拉取模板
-  创建远程仓库, 添加init commit
+  创建远程仓库, 添加本地init commit
   push init commit到远程仓库
 */
 
@@ -18,6 +18,7 @@ const figlet    = require('figlet')
 const github    = require('./lib/github')
 const repo      = require('./lib/repo')
 const files     = require('./lib/files')
+const template  = require('./lib/template')
 
 
 clear()
@@ -46,8 +47,8 @@ const getGithubToken = async () => {
   if (accessToken) {
     console.log(chalk.yellow('An existing access token has been found!'))
     // ask user to regenerate a new token
-    token = await github.regenerateNewToken(accessToken.id);
-    return token;
+    token = await github.regenerateNewToken(accessToken.id)
+    return token
   }
   // No access token found, register one now
   token = await github.registerNewToken()
@@ -62,10 +63,14 @@ const run = async () => {
     console.log(
       chalk.green('Sucessfully authenticated!')
     )
+    // TODO git clone remote template repository to local
+    const clone_done = await template.fetchRemoteTempalte()
+    if (clone_done) {
+      console.log(chalk.green('Template clone sucessfully'))
+    }
+
     // Create remote repository
     const url = await repo.createRemoteRepo()
-
-    // TODO git clone remote template repository to local
 
     // Setup local repository and push to remote
     const done = await repo.setupRepo(url)

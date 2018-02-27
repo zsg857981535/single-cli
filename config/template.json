@@ -1,0 +1,16 @@
+{
+  "list": [
+    {
+      "name": "h5",
+      "clone_url": "https://github.com/zsg857981535/cssPractise.git"
+    },
+    {
+      "name": "web",
+      "clone_url": "https://github.com/zsg857981535/test-cli.git"
+    },
+    {
+      "name": "server",
+      "clone_url": "https://github.com/zsg857981535/test-cli.git"
+    }
+  ]
+}
