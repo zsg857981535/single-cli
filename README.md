@@ -23,7 +23,7 @@
 > Usage
 
 ```
-# It will clone tempalte respository to local, workDirectory default is template reposotory's name
+# It will clone tempalte respository to local, workDirectory default is template respository's name
 
 single-cli -n workDirectory
 
