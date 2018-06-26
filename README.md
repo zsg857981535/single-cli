@@ -25,7 +25,7 @@
 ```
 # It will clone tempalte respository to local, workDirectory default is template respository's name
 
-single-cli -n workDirectory
+single-cli -n <projectName>
 
 ```
 
